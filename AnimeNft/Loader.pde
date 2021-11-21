@@ -119,38 +119,38 @@ class Loader {
   }
   
   void loadSilhouette(String imageFilePath, String code, String[] attributes, String[] rules){
-    SilhouetteLayers.add(new Layer(imageFilePath, code, "silhouette", attributes, rules));
+    SilhouetteLayers.add(new Layer(imageFilePath, code, "silhouette", attributes, rules, false));
   }
   
   void loadHair(String imageFilePath, String code, String[] attributes, String[] rules){
-    HairLayers.add(new Layer(imageFilePath, code, "hair", attributes, rules));
+    HairLayers.add(new Layer(imageFilePath, code, "hair", attributes, rules, false));
   }
   
   void loadEyes(String imageFilePath, String code, String[] attributes, String[] rules){
-    EyesLayers.add(new Layer(imageFilePath, code, "eyes", attributes, rules));
+    EyesLayers.add(new Layer(imageFilePath, code, "eyes", attributes, rules, false));
   }
 
   void loadApparel(String imageFilePath, String code, String[] attributes, String[] rules){
-    ApparelLayers.add(new Layer(imageFilePath, code, "apparel", attributes, rules));
+    ApparelLayers.add(new Layer(imageFilePath, code, "apparel", attributes, rules, false));
   }
 
   void loadMouth(String imageFilePath, String code, String[] attributes, String[] rules){
-    MouthLayers.add(new Layer(imageFilePath, code, "mouth", attributes, rules));
+    MouthLayers.add(new Layer(imageFilePath, code, "mouth", attributes, rules, false));
   }
 
   void loadMask(String imageFilePath, String code, String[] attributes, String[] rules){
-    MaskLayers.add(new Layer(imageFilePath, code, "mask", attributes, rules));
+    MaskLayers.add(new Layer(imageFilePath, code, "mask", attributes, rules, false));
   }
 
   void loadWeapon(String imageFilePath, String code, String[] attributes, String[] rules){
-    WeaponLayers.add(new Layer(imageFilePath, code, "weapon", attributes, rules));
+    WeaponLayers.add(new Layer(imageFilePath, code, "weapon", attributes, rules, false));
   }
 
   void loadScar(String imageFilePath, String code, String[] attributes, String[] rules){
-    ScarLayers.add(new Layer(imageFilePath, code, "scar", attributes, rules));
+    ScarLayers.add(new Layer(imageFilePath, code, "scar", attributes, rules, false));
   }
 
   void loadBackground(String imageFilePath, String code, String[] attributes, String[] rules){
-    BackgroundLayers.add(new Layer(imageFilePath, code, "background", attributes, rules));
+    BackgroundLayers.add(new Layer(imageFilePath, code, "background", attributes, rules, true));
   }
 }

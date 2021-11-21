@@ -1,3 +1,4 @@
+import gifAnimation.*;
 
 /*
 
@@ -37,10 +38,16 @@
 */
 
 int totalPopulation = 10;
+int frames = 2;
+
+GifMaker gifExport;
 
 void setup(){
   
   size(600, 600);
+  
+  gifExport = new GifMaker(this, "export.gif");
+  gifExport.setRepeat(0);        // make it an "endless" animation
   
 }
 
@@ -71,11 +78,20 @@ void draw(){
       layers.add(layer);
     }
     float bgx, bgy;
-    for(Layer layer: layers){
-      if(layer.layerClass == "background"){
+    for(int f = 1; f <= frames; f++){
+      for(Layer layer: layers){
+        if(layer.isGif){
+          image(loadImage(layer.getGifFrameFilePath(f)), 0, 0);
+        }
+        else{
+          image(loadImage(layer.imageFilePath), 0, 0); 
+        }
       }
-      image(loadImage(layer.imageFilePath), 0, 0);
+      
+      gifExport.addFrame();
     }
+    
+    gifExport.finish();
   }
 }
 
