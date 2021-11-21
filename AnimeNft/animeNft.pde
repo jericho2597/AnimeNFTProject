@@ -1,4 +1,3 @@
-import gifAnimation.*;
 
 /*
 
@@ -40,14 +39,9 @@ import gifAnimation.*;
 int totalPopulation = 10;
 int frames = 2;
 
-GifMaker gifExport;
-
 void setup(){
   
   size(600, 600);
-  
-  gifExport = new GifMaker(this, "export.gif");
-  gifExport.setRepeat(0);        // make it an "endless" animation
   
 }
 
@@ -88,10 +82,9 @@ void draw(){
         }
       }
       
-      gifExport.addFrame();
+      saveFrame("img/nft"+f+".png");
     }
     
-    gifExport.finish();
   }
 }
 

@@ -101,8 +101,8 @@ class Loader {
 
   void loadAllBackgrounds() {
     // One line per hair layer to be loaded into collection
-    loadBackground("layers/background/one.png", "s1", new String[]{}, new String[]{});
-    loadBackground("layers/background/two.png", "s1", new String[]{}, new String[]{});
+    loadBackground("layers/background/one", "s1", new String[]{}, new String[]{});
+    loadBackground("layers/background/two", "s1", new String[]{}, new String[]{});
     
   }
   

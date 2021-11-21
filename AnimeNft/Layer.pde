@@ -21,6 +21,6 @@ class Layer {
    //      - 2.png
    //      - ...
    public String getGifFrameFilePath(int frame){
-     return "imageFilePath" + "/" + frame + ".png";
+     return imageFilePath + "/" + frame + ".png";
    }
 }
