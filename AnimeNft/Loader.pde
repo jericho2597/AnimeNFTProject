@@ -10,6 +10,36 @@ class Loader {
   public ArrayList<Layer> ScarLayers = new ArrayList<Layer>();
   public ArrayList<Layer> BackgroundLayers = new ArrayList<Layer>();
   
+  ArrayList<Layer> getSet(String type){
+    if(type == "silhouette"){
+      return SilhouetteLayers;
+    }
+    else if(type == "hair"){
+      return HairLayers;
+    }
+    else if(type == "eyes"){
+      return EyesLayers;
+    }
+    else if(type == "apparel"){
+      return ApparelLayers;
+    }
+    else if(type == "mouth"){
+      return MouthLayers;
+    }
+    else if(type == "mask"){
+      return MaskLayers;
+    }
+    else if(type == "weapon"){
+      return WeaponLayers;
+    }
+    else if(type == "scar"){
+      return ScarLayers;
+    }
+    else{
+      return BackgroundLayers;
+    }
+  }
+  
   void loadAllSilhouette() {
     // One line per hair layer to be loaded into collection
     

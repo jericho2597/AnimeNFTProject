@@ -1,3 +1,4 @@
+
 /*
 
   RULE GRAMMAR
@@ -35,10 +36,45 @@
       
 */
 
-void setup(){}
+int totalPopulation = 1000;
+
+void setup(){
+  
+  frameRate(16);
+  
+}
 
 // BEING TO LOAD IN ALL DATA
 Loader data = new Loader();
+
+void draw(){
+  ArrayList<String> order = new ArrayList<String>();
+  order.add("background");
+  order.add("silhouette");
+  order.add("hair");
+  order.add("eyes");
+  order.add("apparel");
+  order.add("mouth");
+  order.add("mask");
+  order.add("weapon");
+  order.add("scar");
+  
+  for(int i = 0; i < totalPopulation; i++){
+    ArrayList<Rule> rules = new ArrayList<Rule>();
+    ArrayList<Layer> layers = new ArrayList<Layer>();
+    for(String featureName: order){
+      ArrayList<Layer> features = data.getSet(featureName);
+      Layer layer = getRandomFeature(features);
+      for(int x = 0; x < layer.rules.length; x++){
+        rules.add(Rule(layer.rules[i].split(";")));
+      }
+    }
+  }
+}
+
+Layer getRandomFeature(ArrayList<Layer> features){
+  return features.get(Math.round(random(features.size())));
+}
 
 // PIPELINE
 
