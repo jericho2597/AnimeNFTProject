@@ -46,15 +46,15 @@ class Loader {
     // One line per hair layer to be loaded into collection
     
     // EXAMPLE
-    loadSilhouette("layers/silhouette/one.png", "s1", new ArrayList<String>(Arrays.asList(new String[]{})), new String[]{});
-    loadSilhouette("layers/silhouette/two.png", "s1", new ArrayList<String>(Arrays.asList(new String[]{})), new String[]{});
+    loadSilhouette("layers/silhouette/one.png", "s1", new ArrayList<String>(Arrays.asList(new String[]{})), new String[]{"hair;yellow;1.0"});
+    loadSilhouette("layers/silhouette/two.png", "s1", new ArrayList<String>(Arrays.asList(new String[]{})), new String[]{"hair;yellow;0.9999999999999"});
   }
 
   void loadAllHair() {
     // One line per hair layer to be loaded into collection
     
     // EXAMPLE
-    loadHair("layers/hair/one.png", "s1", new ArrayList<String>(Arrays.asList(new String[]{})), new String[]{});
+    loadHair("layers/hair/one.png", "s1", new ArrayList<String>(Arrays.asList(new String[]{"yellow"})), new String[]{});
     loadHair("layers/hair/two.png", "s1", new ArrayList<String>(Arrays.asList(new String[]{})), new String[]{});
   }
   

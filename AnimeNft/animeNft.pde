@@ -101,7 +101,7 @@ ArrayList<Layer> getFilteredFeatures(ArrayList<Layer> features, ArrayList<Rule> 
   
   for(Rule rule : rules){
    if(rule.layerClass.equals(featureName)){
-    if(random(1) < Integer.parseInt(rule.probability)){
+    if(random(1) < Float.parseFloat(rule.probability)){
       applicableRules.add(rule);
     }
    }
