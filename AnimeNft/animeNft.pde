@@ -4,7 +4,7 @@
   RULE GRAMMAR
   
   Components:
-   - LAYER: the name of a type of layer.
+   - LAYER: the name of a type of layer, or a "*" which means the rule is applied to all layers
    - ATTRIBUTE: a string that can belong to a layer describing it. Layers can have many attributes.
    - PROBABILITY: the probability that this rule is enforced (0.0-1.0)
    - ; is used as a delimeter and should not be contained in any components strings
@@ -100,7 +100,7 @@ ArrayList<Layer> getFilteredFeatures(ArrayList<Layer> features, ArrayList<Rule> 
   ArrayList<Rule> applicableRules = new ArrayList<Rule>();
   
   for(Rule rule : rules){
-   if(rule.layerClass.equals(featureName)){
+   if(rule.layerClass.equals(featureName) || rule.layerClass.equals("*")){
     if(random(1) < Float.parseFloat(rule.probability)){
       applicableRules.add(rule);
     }
