@@ -65,13 +65,16 @@ void draw(){
     ArrayList<Layer> layers = new ArrayList<Layer>();
     for(String featureName: order){
       ArrayList<Layer> features = data.getSet(featureName);
+      
+      // filter features based on rules
+      features = getFilteredFeatures(features, rules, featureName);
+      
       Layer layer = getRandomFeature(features);
       for(int x = 0; x < layer.rules.length; x++){
         rules.add(new Rule(layer.rules[x].split(";")));
       }
       layers.add(layer);
     }
-    float bgx, bgy;
     for(int f = 1; f <= frames; f++){
       for(Layer layer: layers){
         if(layer.isGif){
@@ -90,6 +93,38 @@ void draw(){
 
 Layer getRandomFeature(ArrayList<Layer> features){
   return features.get((int)Math.floor(random(features.size())));
+}
+
+ArrayList<Layer> getFilteredFeatures(ArrayList<Layer> features, ArrayList<Rule> rules, String featureName){
+  
+  ArrayList<Rule> applicableRules = new ArrayList<Rule>();
+  
+  for(Rule rule : rules){
+   if(rule.layerClass.equals(featureName)){
+    if(random(1) < Integer.parseInt(rule.probability)){
+      applicableRules.add(rule);
+    }
+   }
+  }
+  
+  ArrayList<Layer> filteredFeatures = new ArrayList<Layer>();
+  
+  for(Layer feature : features){
+   boolean add = true;
+   
+   for(Rule rule : applicableRules){
+     if(!feature.attributes.contains(rule.attribute)){
+       add = false;
+       break;
+     }
+   }
+   
+   if(add){
+    filteredFeatures.add(feature); 
+   }
+  }
+  
+  return filteredFeatures;
 }
 
 // PIPELINE

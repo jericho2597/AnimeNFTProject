@@ -1,3 +1,5 @@
+import java.util.*;
+
 class Loader {
  
   public ArrayList<Layer> SilhouetteLayers = new ArrayList<Layer>();
@@ -44,65 +46,65 @@ class Loader {
     // One line per hair layer to be loaded into collection
     
     // EXAMPLE
-    loadSilhouette("layers/silhouette/one.png", "s1", new String[]{}, new String[]{});
-    loadSilhouette("layers/silhouette/two.png", "s1", new String[]{}, new String[]{});
+    loadSilhouette("layers/silhouette/one.png", "s1", new ArrayList<String>(Arrays.asList(new String[]{})), new String[]{});
+    loadSilhouette("layers/silhouette/two.png", "s1", new ArrayList<String>(Arrays.asList(new String[]{})), new String[]{});
   }
 
   void loadAllHair() {
     // One line per hair layer to be loaded into collection
     
     // EXAMPLE
-    loadHair("layers/hair/one.png", "s1", new String[]{}, new String[]{});
-    loadHair("layers/hair/two.png", "s1", new String[]{}, new String[]{});
+    loadHair("layers/hair/one.png", "s1", new ArrayList<String>(Arrays.asList(new String[]{})), new String[]{});
+    loadHair("layers/hair/two.png", "s1", new ArrayList<String>(Arrays.asList(new String[]{})), new String[]{});
   }
   
   void loadAllEyes() {
     // One line per hair layer to be loaded into collection
     
     // EXAMPLE
-    loadEyes("layers/eyes/one.png", "s1", new String[]{}, new String[]{});
-    loadEyes("layers/eyes/two.png", "s1", new String[]{}, new String[]{});
+    loadEyes("layers/eyes/one.png", "s1", new ArrayList<String>(Arrays.asList(new String[]{})), new String[]{});
+    loadEyes("layers/eyes/two.png", "s1", new ArrayList<String>(Arrays.asList(new String[]{})), new String[]{});
   }
 
   void loadAllApparel() {
     // One line per hair layer to be loaded into collection
-    loadApparel("layers/apparel/one.png", "s1", new String[]{}, new String[]{});
-    loadApparel("layers/apparel/two.png", "s1", new String[]{}, new String[]{});
+    loadApparel("layers/apparel/one.png", "s1", new ArrayList<String>(Arrays.asList(new String[]{})), new String[]{});
+    loadApparel("layers/apparel/two.png", "s1", new ArrayList<String>(Arrays.asList(new String[]{})), new String[]{});
     
   }
 
   void loadAllMouths() {
     // One line per hair layer to be loaded into collection
-    loadMouth("layers/mouth/one.png", "s1", new String[]{}, new String[]{});
-    loadMouth("layers/mouth/two.png", "s1", new String[]{}, new String[]{});
+    loadMouth("layers/mouth/one.png", "s1", new ArrayList<String>(Arrays.asList(new String[]{})), new String[]{});
+    loadMouth("layers/mouth/two.png", "s1", new ArrayList<String>(Arrays.asList(new String[]{})), new String[]{});
     
   }
 
   void loadAllMasks() {
     // One line per hair layer to be loaded into collection
-    loadMask("layers/mask/one.png", "s1", new String[]{}, new String[]{});
-    loadMask("layers/mask/two.png", "s1", new String[]{}, new String[]{});
+    loadMask("layers/mask/one.png", "s1", new ArrayList<String>(Arrays.asList(new String[]{})), new String[]{});
+    loadMask("layers/mask/two.png", "s1", new ArrayList<String>(Arrays.asList(new String[]{})), new String[]{});
     
   }
 
   void loadAllWeapons() {
     // One line per hair layer to be loaded into collection
-    loadWeapon("layers/weapon/one.png", "s1", new String[]{}, new String[]{});
-    loadWeapon("layers/weapon/two.png", "s1", new String[]{}, new String[]{});
+    loadWeapon("layers/weapon/one.png", "s1", new ArrayList<String>(Arrays.asList(new String[]{})), new String[]{});
+    loadWeapon("layers/weapon/two.png", "s1", new ArrayList<String>(Arrays.asList(new String[]{})), new String[]{});
     
   }
 
   void loadAllScars() {
     // One line per hair layer to be loaded into collection
-    loadScar("layers/scar/one.png", "s1", new String[]{}, new String[]{});
-    loadScar("layers/scar/two.png", "s1", new String[]{}, new String[]{});
+    loadScar("layers/scar/one.png", "s1", new ArrayList<String>(Arrays.asList(new String[]{})), new String[]{});
+    loadScar("layers/scar/two.png", "s1", new ArrayList<String>(Arrays.asList(new String[]{})), new String[]{});
     
   }
 
   void loadAllBackgrounds() {
     // One line per hair layer to be loaded into collection
-    loadBackground("layers/background/one", "s1", new String[]{}, new String[]{});
-    loadBackground("layers/background/two", "s1", new String[]{}, new String[]{});
+    loadBackground("layers/background/one", "s1", new ArrayList<String>(Arrays.asList(new String[]{})), new String[]{});
+    loadBackground("layers/background/two", "s1", new ArrayList<String>(Arrays.asList(new String[]{})), new String[]{});
     
   }
   
@@ -118,39 +120,39 @@ class Loader {
       loadAllBackgrounds();
   }
   
-  void loadSilhouette(String imageFilePath, String code, String[] attributes, String[] rules){
+  void loadSilhouette(String imageFilePath, String code, ArrayList<String> attributes, String[] rules){
     SilhouetteLayers.add(new Layer(imageFilePath, code, "silhouette", attributes, rules, false));
   }
   
-  void loadHair(String imageFilePath, String code, String[] attributes, String[] rules){
+  void loadHair(String imageFilePath, String code, ArrayList<String> attributes, String[] rules){
     HairLayers.add(new Layer(imageFilePath, code, "hair", attributes, rules, false));
   }
   
-  void loadEyes(String imageFilePath, String code, String[] attributes, String[] rules){
+  void loadEyes(String imageFilePath, String code, ArrayList<String> attributes, String[] rules){
     EyesLayers.add(new Layer(imageFilePath, code, "eyes", attributes, rules, false));
   }
 
-  void loadApparel(String imageFilePath, String code, String[] attributes, String[] rules){
+  void loadApparel(String imageFilePath, String code, ArrayList<String> attributes, String[] rules){
     ApparelLayers.add(new Layer(imageFilePath, code, "apparel", attributes, rules, false));
   }
 
-  void loadMouth(String imageFilePath, String code, String[] attributes, String[] rules){
+  void loadMouth(String imageFilePath, String code, ArrayList<String> attributes, String[] rules){
     MouthLayers.add(new Layer(imageFilePath, code, "mouth", attributes, rules, false));
   }
 
-  void loadMask(String imageFilePath, String code, String[] attributes, String[] rules){
+  void loadMask(String imageFilePath, String code, ArrayList<String> attributes, String[] rules){
     MaskLayers.add(new Layer(imageFilePath, code, "mask", attributes, rules, false));
   }
 
-  void loadWeapon(String imageFilePath, String code, String[] attributes, String[] rules){
+  void loadWeapon(String imageFilePath, String code, ArrayList<String> attributes, String[] rules){
     WeaponLayers.add(new Layer(imageFilePath, code, "weapon", attributes, rules, false));
   }
 
-  void loadScar(String imageFilePath, String code, String[] attributes, String[] rules){
+  void loadScar(String imageFilePath, String code, ArrayList<String> attributes, String[] rules){
     ScarLayers.add(new Layer(imageFilePath, code, "scar", attributes, rules, false));
   }
 
-  void loadBackground(String imageFilePath, String code, String[] attributes, String[] rules){
+  void loadBackground(String imageFilePath, String code, ArrayList<String> attributes, String[] rules){
     BackgroundLayers.add(new Layer(imageFilePath, code, "background", attributes, rules, true));
   }
 }
