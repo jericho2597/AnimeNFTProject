@@ -85,7 +85,7 @@ void draw(){
         }
       }
       
-      saveFrame("img/nft"+f+".png");
+      saveFrame("outpus/"+i+"/nft"+f+".png");
     }
     
   }
@@ -126,15 +126,4 @@ ArrayList<Layer> getFilteredFeatures(ArrayList<Layer> features, ArrayList<Rule> 
   
   return filteredFeatures;
 }
-
-// PIPELINE
-
-// LOOP 1000 times or however many images to generate
-  // initialise new empty set of rules
-  // initialise empty array of layers 
-  // for each type of feature to be selected
-    // select feature based on current rules
-    // add new feature's rules to collection
-  // draw all images on top of each other in order
-  // export the image to a file
   
