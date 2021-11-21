@@ -36,11 +36,11 @@
       
 */
 
-int totalPopulation = 1000;
+int totalPopulation = 10;
 
 void setup(){
   
-  frameRate(16);
+  size(600, 600);
   
 }
 
@@ -50,14 +50,14 @@ Loader data = new Loader();
 void draw(){
   ArrayList<String> order = new ArrayList<String>();
   order.add("background");
-  order.add("silhouette");
-  order.add("hair");
-  order.add("eyes");
-  order.add("apparel");
-  order.add("mouth");
-  order.add("mask");
   order.add("weapon");
+  order.add("silhouette");
+  order.add("apparel");
   order.add("scar");
+  order.add("eyes");
+  order.add("mouth");
+  order.add("hair");
+  order.add("mask");
   
   for(int i = 0; i < totalPopulation; i++){
     ArrayList<Rule> rules = new ArrayList<Rule>();
@@ -66,14 +66,21 @@ void draw(){
       ArrayList<Layer> features = data.getSet(featureName);
       Layer layer = getRandomFeature(features);
       for(int x = 0; x < layer.rules.length; x++){
-        rules.add(Rule(layer.rules[i].split(";")));
+        rules.add(new Rule(layer.rules[x].split(";")));
       }
+      layers.add(layer);
+    }
+    float bgx, bgy;
+    for(Layer layer: layers){
+      if(layer.layerClass == "background"){
+      }
+      image(loadImage(layer.imageFilePath), 0, 0);
     }
   }
 }
 
 Layer getRandomFeature(ArrayList<Layer> features){
-  return features.get(Math.round(random(features.size())));
+  return features.get((int)Math.floor(random(features.size())));
 }
 
 // PIPELINE

@@ -44,50 +44,65 @@ class Loader {
     // One line per hair layer to be loaded into collection
     
     // EXAMPLE
-    // loadSilhouette("some_file_path", "s1", new String[]{}, new String[]{"eyes;happy;0.5;"});
+    loadSilhouette("layers/silhouette/one.png", "s1", new String[]{}, new String[]{});
+    loadSilhouette("layers/silhouette/two.png", "s1", new String[]{}, new String[]{});
   }
 
   void loadAllHair() {
     // One line per hair layer to be loaded into collection
     
     // EXAMPLE
-    // loadHair("some_file_path", "h1", new String[]{"happy", "blonde"}, new String[]{"eyes;happy;1.0;"});
+    loadHair("layers/hair/one.png", "s1", new String[]{}, new String[]{});
+    loadHair("layers/hair/two.png", "s1", new String[]{}, new String[]{});
   }
   
   void loadAllEyes() {
     // One line per hair layer to be loaded into collection
     
     // EXAMPLE
-    // loadEyes("some_file_path", "e1", new String[]{"blue", "angry"}, new String[]{"mouth;angry;0.9;"});
+    loadEyes("layers/eyes/one.png", "s1", new String[]{}, new String[]{});
+    loadEyes("layers/eyes/two.png", "s1", new String[]{}, new String[]{});
   }
 
   void loadAllApparel() {
     // One line per hair layer to be loaded into collection
+    loadApparel("layers/apparel/one.png", "s1", new String[]{}, new String[]{});
+    loadApparel("layers/apparel/two.png", "s1", new String[]{}, new String[]{});
     
   }
 
   void loadAllMouths() {
     // One line per hair layer to be loaded into collection
+    loadMouth("layers/mouth/one.png", "s1", new String[]{}, new String[]{});
+    loadMouth("layers/mouth/two.png", "s1", new String[]{}, new String[]{});
     
   }
 
   void loadAllMasks() {
     // One line per hair layer to be loaded into collection
+    loadMask("layers/mask/one.png", "s1", new String[]{}, new String[]{});
+    loadMask("layers/mask/two.png", "s1", new String[]{}, new String[]{});
     
   }
 
   void loadAllWeapons() {
     // One line per hair layer to be loaded into collection
+    loadWeapon("layers/weapon/one.png", "s1", new String[]{}, new String[]{});
+    loadWeapon("layers/weapon/two.png", "s1", new String[]{}, new String[]{});
     
   }
 
   void loadAllScars() {
     // One line per hair layer to be loaded into collection
+    loadScar("layers/scar/one.png", "s1", new String[]{}, new String[]{});
+    loadScar("layers/scar/two.png", "s1", new String[]{}, new String[]{});
     
   }
 
   void loadAllBackgrounds() {
     // One line per hair layer to be loaded into collection
+    loadBackground("layers/background/one.png", "s1", new String[]{}, new String[]{});
+    loadBackground("layers/background/two.png", "s1", new String[]{}, new String[]{});
     
   }
   

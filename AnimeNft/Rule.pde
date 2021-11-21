@@ -5,6 +5,6 @@ class Rule {
  Rule(String[] properties){
    layerClass = properties[0];
    attribute = properties[1];
-   probability = properties[2];
+   probability = properties[2]; 
  }
 }
